@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CvSU ThesisForge &ndash; Documentation</title>
+<link rel="icon" href="../assets/cvsu-logo.png"><link rel="stylesheet" href="../css/style.css"></head><body>
+<header class="top"><img class="logo" src="../assets/cvsu-logo.png" alt="Cavite State University seal" width="44" height="44"><div><h1>CvSU ThesisForge</h1><small><a href="../index.html" style="color:var(--mint)">&larr; Back to the app</a></small></div></header>
+<main><section id="docs"><h2>Documentation</h2>
+<p><b>Project:</b> CvSU ThesisForge &middot; <b>Course/Section:</b> ______ &middot; <b>Group members:</b> ______ &middot; <b>Submitted:</b> ______</p>
+<p><b>Problem:</b> Students spend time manually reformatting papers to instructor specifications. <b>General objective:</b> a browser-only tool that applies configurable formatting to a student&rsquo;s own document. <b>Specific objectives:</b> (1) rebuild a valid .docx from an uploaded .docx or text file within 10 s for files up to 10 MB; (2) provide 5 document-type presets, all editable; (3) clear all document references 10 minutes after selection.</p>
+<p><b>Architecture:</b> HTML, CSS and vanilla JavaScript only. No backend, database, login or permanent storage. Documents are processed in the browser tab; each user and tab is independent. Cleanup removes this page&rsquo;s references and Blob URLs but cannot guarantee deletion from browser/OS memory or from files you already downloaded.</p>
+<p><b>Target users:</b> CvSU students. <b>Scope:</b> formatting only; it never writes or invents content or citations.</p>
+<details><summary>Limitations (honest list)</summary><ul>
+<li>PDF cannot be reliably reconverted to editable paragraphs without a PDF library; legacy .DOC is a binary format. Workaround: Save as DOCX first.</li>
+<li>DOCX output keeps paragraphs, headings (Heading styles), bold/italic, simple tables and code lines. Images, footnotes, text boxes, equations, lists numbering and existing headers/footers are <b>not</b> carried over; the app lists what it detected so nothing is dropped silently.</li>
+<li>Headings are only recognized when the source uses Word Heading/Title styles.</li>
+<li>Print headers/footers use CSS page margin boxes (Chromium-based browsers); other browsers may omit them.</li>
+<li>Not yet tested: this build was generated without running a browser. Test upload, download, timer, mobile layout and multi-tab behavior yourself before submitting.</li></ul></details></section></main></body></html>

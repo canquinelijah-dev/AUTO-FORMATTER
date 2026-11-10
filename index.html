@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CvSU ThesisForge</title>
+<link rel="icon" href="assets/cvsu-logo.png">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="top"><img class="logo" src="assets/cvsu-logo.png" alt="Cavite State University seal" width="44" height="44"><div><h1>CvSU ThesisForge</h1><small>Local academic document formatter &middot; nothing leaves your browser</small></div></header>
+<main id="app">
+<section><h2>1. Document &amp; academic details</h2>
+<div class="grid">
+<label>College<select id="college"></select></label>
+<label>Degree program<input id="program" list="progs" placeholder="e.g. BS Information Technology"><datalist id="progs"><option>BS Information Technology<option>BS Computer Science<option>BS Computer Engineering<option>BS Education</datalist></label>
+<label>Course (code)<input id="course" placeholder="e.g. DCIT 22"></label>
+<label>Subject<input id="subject" placeholder="e.g. Computer Programming 1"></label>
+<label>Year level<select id="year"><option>1st<option>2nd<option>3rd<option>4th<option>Other</select></label>
+<label>Section<input id="section" maxlength="20"></label>
+<label>Document type<select id="dtype"></select></label>
+</div><p id="hint" class="mut"></p>
+<p class="mut">Presets are editable starting points, not official CvSU requirements. Follow your instructor&rsquo;s specifications.</p></section>
+
+<section><h2>2. Document information</h2>
+<div class="grid">
+<label>Student name<input id="name"></label><label>Student number<input id="sno"></label>
+<label>Date<input id="date" type="date"></label><label>Assignment / activity no.<input id="ano"></label>
+</div></section>
+
+<section><h2>3. Formatting</h2>
+<div class="grid">
+<label>Paper<select id="paper"><option value="a4">A4</option><option value="letter">Letter</option><option value="legal">Legal</option></select></label>
+<label>Font<select id="font"><option>Arial<option>Times New Roman<option>Calibri<option>Georgia<option>Verdana</select></label>
+<label>Size (pt)<input id="size" type="number" min="8" max="20" step="0.5"></label>
+<label>Line spacing<input id="line" type="number" min="1" max="3" step="0.05"></label>
+<label>Alignment<select id="align"><option value="left">Left<option value="both">Justified<option value="center">Center</select></label>
+<label>Page number<select id="pn"><option value="none">None<option value="right">Bottom right<option value="center">Bottom center</select></label>
+<label>Margin top (in)<input id="mt" type="number" step="0.05" min="0.25" max="3"></label>
+<label>Margin right (in)<input id="mr" type="number" step="0.05" min="0.25" max="3"></label>
+<label>Margin bottom (in)<input id="mb" type="number" step="0.05" min="0.25" max="3"></label>
+<label>Margin left (in)<input id="ml" type="number" step="0.05" min="0.25" max="3"></label>
+<label>Header text<input id="head"></label><label>Footer text<input id="foot"></label>
+<label>Citation style (reference only)<select id="cite"><option>APA 7<option>IEEE<option>MLA<option>Custom</select></label>
+</div>
+<p class="mut" id="secs"></p></section>
+
+<section><h2>4. Upload</h2>
+<div id="drop"><input id="file" type="file" accept=".docx,.doc,.pdf,.txt,.md,.java,.py,.c,.cpp,.js" aria-label="Choose document"><p class="mut">DOCX and plain text/code files are processed. PDF and DOC are checked and rejected with an explanation (see Limitations).</p></div>
+<p id="msg" role="status"></p><ul class="w" id="warn"></ul>
+<div class="row"><span>Session time left: <span id="timer">&ndash;</span></span></div></section>
+
+<section id="prev"><h2>5. Preview &amp; download</h2>
+<div class="row" style="margin:0 0 10px"><button id="dl" disabled>Download .docx</button><button id="pr" disabled>Print / Save as PDF</button></div>
+<p class="mut">The preview is a continuous HTML view, not paginated. The .docx download is a real rebuilt Word file; the print option is a printable HTML representation of it.</p>
+<div id="pagewrap"><div id="page" aria-live="polite"></div></div></section>
+
+<section id="docs"><h2>Documentation</h2><p><a href="documentation/project-documentation.html" style="color:var(--mint)">Open the project documentation</a></p></section>
+</main>
+<script src="js/app.js"></script></body></html>
